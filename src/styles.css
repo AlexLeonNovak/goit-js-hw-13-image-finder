@@ -65,9 +65,18 @@ img {
 }
 
 .card__image {
-  margin-right: 20px;
-  max-width: 200px;
-  max-height: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+.card__image-img {
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
 }
 
 .card__content{

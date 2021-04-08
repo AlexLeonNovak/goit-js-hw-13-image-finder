@@ -38,7 +38,29 @@ async function search() {
   try {
     const pics = await api.fetchImages();
     refs.list.insertAdjacentHTML('beforeend', photoCardTpl(pics.hits));
+    observeLastElement();
   } catch (error) {
     toastr.error(error)
   }
+}
+
+const options = {
+  rootMargin: '50px',
+  threshold: 0.5,
+};
+
+const observer = new IntersectionObserver(onEntry, options);
+let lastElem = null;
+function observeLastElement() {
+  lastElem = refs.list.querySelector('.gallery-item:last-child');
+  observer.observe(lastElem);
+}
+
+function onEntry (entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      search();
+      observer.unobserve(lastElem);
+    }
+  });
 }
