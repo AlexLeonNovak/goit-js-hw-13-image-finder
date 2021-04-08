@@ -18,3 +18,88 @@ body {
    */
   background-image: url('./images/bg-pattern.png');
 }
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.form-control {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  border: 1px solid #000;
+  padding: 5px 15px;
+  flex-grow: 1;
+}
+
+.form-label {
+  font-weight: 700;
+  min-width: 30%;
+  display: inline-block;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.card__name{
+  font-size: 36px;
+  text-align: center;
+}
+
+.card__image {
+  margin-right: 20px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.card__content{
+  display: flex;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.grid-item {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.gallery-item, .stats-item {
+  width: calc(100% / 4 - 30px);
+}
+.stats {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #bbbbbb;
+  background-color: #ffffff;
+}
+.result {
+  margin: 15px 0;
+  padding: 15px 0;
+}
