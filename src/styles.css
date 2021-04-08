@@ -32,6 +32,7 @@ img {
 .container {
   width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .title {
@@ -83,6 +84,10 @@ img {
   margin-left: 30px;
   margin-top: 30px;
 }
+.gallery {
+  padding: 5px 0;
+  margin-bottom: 30px;
+}
 .gallery-item, .stats-item {
   width: calc(100% / 4 - 30px);
 }
@@ -99,7 +104,6 @@ img {
   border: 1px solid #bbbbbb;
   background-color: #ffffff;
 }
-.result {
-  margin: 15px 0;
-  padding: 15px 0;
+.load-more-block {
+  text-align: center;
 }

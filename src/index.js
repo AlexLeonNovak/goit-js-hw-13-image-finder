@@ -1,6 +1,7 @@
 import './styles.css';
 import 'material-design-icons/index';
 import toastr from 'toastr';
+import 'toastr/toastr.scss'
 
 import apiService from './components/apiService';
 import photoCardTpl from './templates/photo-card.hbs';
@@ -19,7 +20,12 @@ refs.loadMore.addEventListener('click', search);
 
 function onFormSubmit(e) {
   e.preventDefault();
-  api.searchQuery = e.target.elements.query.value;
+  const searchQuery = e.target.elements.query.value.trim();
+  if (!searchQuery) {
+    toastr.error('Enter some word');
+    return;
+  }
+  api.searchQuery = searchQuery;
   reset();
   search();
 }
