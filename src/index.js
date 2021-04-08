@@ -2,6 +2,7 @@ import './styles.css';
 import 'material-design-icons/index';
 import toastr from 'toastr';
 import 'toastr/toastr.scss'
+import 'fslightbox';
 
 import apiService from './components/apiService';
 import photoCardTpl from './templates/photo-card.hbs';
@@ -15,7 +16,7 @@ const refs = {
 };
 
 refs.form.addEventListener('submit', onFormSubmit);
-refs.loadMore.addEventListener('click', search);
+// refs.loadMore.addEventListener('click', search);
 
 
 function onFormSubmit(e) {
@@ -39,6 +40,7 @@ async function search() {
     const pics = await api.fetchImages();
     refs.list.insertAdjacentHTML('beforeend', photoCardTpl(pics.hits));
     observeLastElement();
+    refreshFsLightbox();
   } catch (error) {
     toastr.error(error)
   }
