@@ -38,6 +38,9 @@ function reset(){
 async function search() {
   try {
     const pics = await api.fetchImages();
+    if (!pics.hits.length) {
+      throw new Error('There are no any data');
+    }
     refs.list.insertAdjacentHTML('beforeend', photoCardTpl(pics.hits));
     observeLastElement();
     refreshFsLightbox();
